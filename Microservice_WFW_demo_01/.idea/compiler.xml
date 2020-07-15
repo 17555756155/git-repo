@@ -18,7 +18,7 @@
       <module name="service_consumer" target="10" />
       <module name="service_eureka" target="10" />
       <module name="service_provide" target="10" />
-      <module name="service_zuul" target="1.8" />
+      <module name="service_zuul" target="10" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
