@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service_consumer" />
+        <module name="service_eureka" />
+        <module name="service_provide" />
+        <module name="service_zuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="itcast_eureka" target="1.5" />
+      <module name="itcast_service_consumer" target="1.5" />
+      <module name="service_consumer" target="10" />
+      <module name="service_eureka" target="10" />
+      <module name="service_provide" target="10" />
+      <module name="service_zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="service_consumer" options="-parameters" />
+      <module name="service_eureka" options="-parameters" />
+      <module name="service_provide" options="-parameters" />
+      <module name="service_zuul" options="-parameters" />
+    </option>
+  </component>
+</project>

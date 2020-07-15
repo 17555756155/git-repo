@@ -1,0 +1,53 @@
+server:
+  port: 1755
+
+spring:
+  application:
+    name: service-consumer
+
+
+# 熔断器 默认服务超时为1s 开发过程中可以 生产环境中需要修改下
+#因为网络延迟或其他原因 不能那么快 进行处理反应
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000 # 设置hystrix的超时时间为6000ms
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+    register-with-eureka: true
+    # 配置自动从eureka注册中心 拉取服务提供方列表
+    fetch-registry: true  #true 为自动拉取信息 并且缓存到本地
+    #配置自动拉取提供方列表 每5s重新获取一次
+    registry-fetch-interval-seconds: 5
+
+
+
+ #feign 默认集成了hystrix的熔断器集成 默认是关闭状态
+feign:
+  hystrix:
+    enabled: true # 开启feign的熔断功能
+    #请求压缩 feign支持请求和响应进行GZIP压缩 减少通信过程中的性能损耗
+  compression:
+    request:
+      enabled: true #开启请求压缩
+      mime-types: text/html,application/xml,application/json #设置压缩的数据类型
+      min-request-size: 2048  #设置触发压缩的大小下限
+    response:
+      enabled: true #开启响应压缩
+#同时 我们可以对请求的数据类型 以及触发压缩的大小下限进行设置
+
+
+#日志级别配置
+#设置项目包下的日志级别都为debug
+logging:
+  level:
+    com.chengeng: debug

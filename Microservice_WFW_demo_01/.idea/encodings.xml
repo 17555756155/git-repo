@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/service_consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service_eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service_provide" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service_provide/src/main/resources/application.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service_zuul" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

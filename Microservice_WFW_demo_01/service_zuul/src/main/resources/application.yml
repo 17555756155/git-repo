@@ -1,0 +1,19 @@
+server:
+  port: 10086
+spring:
+  application:
+    name: service-zuul
+
+zuul:
+  routes:
+    service-consumer: /consumer-user/**  #对server-provide路径请求 转发到eureka中的service-consumer服务id执行
+    #  path: /server-provide/**
+#      url: http://localhost:10010
+    #  serviceId: service-consumer  #去从注册中心去找id的服务提供方
+  prefix: /api  #配置zuul网关前缀 只有添加前缀了才能通过网关访问
+
+#zuul默认向eureka注册 去拉取服务提供方列表
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/

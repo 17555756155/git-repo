@@ -1,0 +1,32 @@
+server:
+  port: 10010
+
+spring:
+  datasource:
+    url: jdbc:mysql:///test
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    data-username: root
+    data-password: root
+  application:
+    name: server-provide
+
+#配置mybatis 扫描映射文件路径 如果没有可不写
+#配置扫描实体类路径 起别名
+mybatis:
+#  mapper-locations: classpath:com/chengeng/dao/*Mapper.xml
+  type-aliases-package: com.chengeng.Pojo
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+    register-with-eureka: true
+
+#服务续约 服务提供方 定时会向eureka注册中心发送心跳机制
+  #服务失效时间默认为90s 设置成10s 没发送心跳责会移除服务
+  #服务续约的间隔 默认为30s 设置成5s发送一次心跳
+  instance:
+    lease-expiration-duration-in-seconds: 10
+    lease-renewal-interval-in-seconds: 5
+

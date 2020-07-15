@@ -1,0 +1,17 @@
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: service-eureka
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/
+  # 服务剔除和自我保护
+  server:
+    eviction-interval-timer-in-ms: 10000 #超过10秒未响应 进行剔除 默认60s
+    #自我保护在生产环境下很好 但是在开发环境下 我们关闭自我保护
+    enable-self-preservation: false  #关闭自我保护机制
