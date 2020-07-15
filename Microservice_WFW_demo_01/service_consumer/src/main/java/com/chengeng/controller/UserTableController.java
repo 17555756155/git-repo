@@ -15,6 +15,27 @@ import org.springframework.web.bind.annotation.ResponseBody;
 //@DefaultProperties(defaultFallback = "FallbackMethod")
 public class UserTableController {
 
+    /* 我在这个地方新添加了注解
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    * */
+
     /* feign 中默认集成了 hystrix熔断器 需要配置中打开 */
 
 /*    @Autowired
