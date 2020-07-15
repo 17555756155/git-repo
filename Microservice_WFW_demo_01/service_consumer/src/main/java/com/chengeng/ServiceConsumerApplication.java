@@ -11,6 +11,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients  //使用远程调用feign组件
 public class ServiceConsumerApplication {
 
+    /* 分支 dev1 修改的内容*/
+
+    /* master分支 修改的内容*/
+
     /*@Bean
     @LoadBalanced //开启负载均衡
     public RestTemplate GetRestTemplate(){
